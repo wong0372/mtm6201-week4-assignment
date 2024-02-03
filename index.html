@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Picture This!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Picture This!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <header class="header">
+      <div class="title">
+        <h1>Picture This!</h1>
+        <h4>My Really Cool Blog Post</h4>
+      </div>
 
-<body>
-  <header class="header">
-    <div class="title">
-      <h1>Picture This!</h1>
-      <h4>My Really Cool Blog Post</h4>
-    </div>
-    <img src="images/museum.jpg" alt="placeholder">
+      <!-- landscape - viewport is smaller than 960px - use max-width -->
+      <section>
+        <picture>
+          <source
+            srcset="
+              images/ml-320_x_180.png,
+              images/ml-640_x_360.png 2x,
+              images/ml-960_x_540.png 3x
+            "
+            media="(max-width:320px)"
+          />
 
-  </header>
-</body>
+          <source
+            srcset="
+              images/ml-480_x_270.png,
+              images/ml-960_x_540.png  2x,
+              images/ml-1440_x_810.png 3x
+            "
+            media="(max-width: 480px)"
+          />
 
+          <source
+            srcset="
+              images/ml-720_x_405.png,
+              images/ml-960_x_540.png  2x,
+              images/ml-1440_x_810.png 3x
+            "
+            media="(max-width: 720px)"
+          />
+
+          <img src="images/museum.jpg" alt="placeholder" />
+        </picture>
+      </section>
+
+      <!-- <img src="images/museum.jpg" alt="placeholder" /> -->
+    </header>
+  </body>
 </html>
